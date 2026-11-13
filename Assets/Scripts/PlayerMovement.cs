@@ -2,20 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10.2f;
+    [SerializeField] private float speed = 10.2f;
+    [SerializeField] private Rigidbody rbPlayer;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void FixedUpdate()
     {
-        int healthPoints = 54;
-        
-        Debug.Log(speed);
-        Debug.Log(healthPoints);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rbPlayer.AddForce(0.0f, 0.0f, speed);
     }
 }
